@@ -1,3 +1,5 @@
+@Library('my-shared-library') _
+
 pipeline{
 
     agent any
@@ -6,9 +8,10 @@ pipeline{
          
         stage('Git Checkout'){
             steps{
-                script{
-                    git branch: 'main', url: 'https://github.com/ejejosh/cicd-terraform-eks-jenkins-shared-library.git'
-                }
+                gitCheckout(
+                    branch: "main",
+                    url: "https://github.com/ejejosh/cicd-terraform-eks-jenkins-shared-library.git"
+                )
             }
         }     
     }
