@@ -13,7 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>minikube-sample</name>
-    <description>Demo project for Spring Cloud Kubernetes</description>
+    <description>Spring Kubernetes Project</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
