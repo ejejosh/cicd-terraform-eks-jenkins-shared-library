@@ -10,10 +10,12 @@ pipeline{
 
             steps{
 
-                gitCheckout(
-                    branch: 'main',
-                    url: 'https://github.com/ejejosh/cicd-terraform-eks-jenkins-shared-library.git'
-                )
+                script{
+                    gitCheckout(
+                        branch: "main",
+                        url: "https://github.com/ejejosh/cicd-terraform-eks-jenkins-shared-library.git"
+                    )
+                }
             }
         }     
     }
