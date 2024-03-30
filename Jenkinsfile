@@ -11,6 +11,11 @@ pipeline{
         string(name: 'DockerHubUser', description: "name of the Application", defaultValue: 'vikashashoke')
     }
 
+    environment{
+        ACCESS_KEY = credentials('AWS_ACCESS_KEY_ID')
+        SECRET_KEY = credentials('AWS_SECRET_KEY_ID')
+    }
+
     stages{
          
         stage('Git Checkout'){
@@ -93,8 +98,7 @@ pipeline{
         stage('Docker Image Cleanup : DockerHub '){
             when { expression {  params.action == 'create' } }
             steps{
-               script{
-                   
+               script{                  
                    dockerImageCleanup("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
                }
             }
